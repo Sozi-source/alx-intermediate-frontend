@@ -1,1 +1,12 @@
 /*! tailwindcss v4.1.7 | MIT License | https://tailwindcss.com */
+.grid {
+  display: grid;
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
