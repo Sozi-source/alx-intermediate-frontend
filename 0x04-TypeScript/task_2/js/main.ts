@@ -8,7 +8,7 @@ workDirectorTasks(): string
 interface TeacherInterface{
     workFromHome(): string
     getCoffeeBreak():string
-    workTeacherTask(): string
+    workTeacherTasks(): string
 }
 
 class Director implements DirectorInterface{
@@ -16,7 +16,7 @@ class Director implements DirectorInterface{
         return "working from home"
     }
 
-    getToWork(): string{
+    getCoffeeBreak(): string{
         return "Getting a coffee break"
     }
 
@@ -37,7 +37,7 @@ workTeacherTasks(): string{
 }
 }
 
-function createEmployee (salary: number|string) Director|Teacher{
+function createEmployee (salary: number|string): Director|Teacher{
     let numericSalary: number;
     if (typeof salary === 'number') {
         numericSalary = salary;
@@ -57,4 +57,15 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
 
+// String literal types
+type subjects= "Math"|"History";
 
+function teachClass(todayClass:subjects): string{
+    if(todayClass === "Math"){
+        return "Teaching Math"
+    }else{
+        return "Teaching History "
+    }
+}
+console.log(teachClass("Math"))
+console.log(teachClass("History"))
